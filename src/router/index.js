@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import PlayGround from '../views/PlayGround.vue'
 
 const routes = [
     {
         path: '/',
         name: 'home',
         component: HomeView,
+    },
+    {
+        path: '/playground',
+        name: 'playGround',
+        component: PlayGround,
     },
 ]
 
