@@ -2,12 +2,7 @@
     <div className="playGround">
         <div class="screenWrap">
             <div class="screen">
-                <NesVue
-                    width="100%"
-                    class="nesWrap"
-                    height="100%"
-                    url="https://taiyuuki.github.io/nes-vue/Super Mario Bros (JU).nes"
-                />
+                <NesVue gain="40" width="100%" class="nesWrap" height="100%" :url="`http://81.69.30.66:9999/romStatic/rom/${romCode}.nes`" />
             </div>
             <div class="setting">
                 <div v-gamepad:touch="'START'">START</div>
@@ -66,6 +61,10 @@
 
 <script setup>
 import { NesVue, vGamepad } from 'nes-vue'
+import { useRoute } from 'vue-router'
+import { ref } from 'vue'
+const query = useRoute().query
+const romCode = ref(query.code)
 </script>
 <style lang="less">
 .playGround {
@@ -95,6 +94,7 @@ import { NesVue, vGamepad } from 'nes-vue'
                 color: white;
                 background-color: #2f88ff;
                 border-radius: 4px;
+                border: 3px solid black;
             }
         }
     }
