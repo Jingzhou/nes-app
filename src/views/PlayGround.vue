@@ -3,13 +3,13 @@
         <div class="screenWrap">
             <div class="screen">
                 <nes-vue
-                    :auto-start="true"
+                    label="点击开始游戏"
                     ref="nesRef"
                     :gain="gain"
                     width="100%"
                     class="nesWrap"
                     height="100%"
-                    :url="`http://81.69.30.66:9999/romStatic/rom/${romCode}.nes`"
+                    :url="`${config.serverUrl}/romStatic/rom/${romCode}.nes`"
                 />
             </div>
             <div class="setting">
@@ -62,6 +62,7 @@ import { showNotify } from 'vant'
 import 'vant/es/notify/style'
 import { useRoute } from 'vue-router'
 import { onBeforeUnmount, onMounted, ref } from 'vue'
+import config from '../config/index'
 
 const query = useRoute().query
 const romCode = ref(query.code)
