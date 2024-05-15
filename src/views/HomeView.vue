@@ -10,12 +10,19 @@
 </template>
 
 <script>
-import romList from './romList.json'
+import axios from 'axios'
 import { useRouter } from 'vue-router'
+import { ref } from 'vue'
+
 export default {
     name: 'HomeView',
     setup() {
+        const romList = ref([])
         const router = useRouter()
+        // 获取游戏列表
+        axios.get('http://localhost:9999/romStatic/romList.json').then(res => {
+            romList.value = res.data
+        })
         const goToGame = code => {
             router.push({ name: 'playGround', query: { code } })
         }
@@ -31,7 +38,10 @@ export default {
 <style lang="less">
 .home {
     padding: 16px 0;
+    height: 100vh;
+    overflow-y: auto;
     background-color: #2c3e50;
+    text-align: center;
     .romItem {
         display: inline-block;
         width: 33vw;

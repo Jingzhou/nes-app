@@ -16,6 +16,9 @@ html {
     -moz-user-select: none; /*火狐*/
     -ms-user-select: none; /*IE10*/
     user-select: none;
+    overflow: hidden;
+    -ms-touch-action: manipulation; /* 针对IE Mobile */
+    touch-action: manipulation;
 }
 
 body {
@@ -23,12 +26,14 @@ body {
     border: 0;
     padding: 0;
     height: 100%;
+    overflow: hidden;
+    -ms-touch-action: manipulation; /* 针对IE Mobile */
+    touch-action: manipulation;
 }
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
 }
 </style>
