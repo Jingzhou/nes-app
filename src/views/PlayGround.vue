@@ -22,7 +22,9 @@
             <div class="opRightWrap">
                 <div class="opRight">
                     <div class="r1">
+                        <div class="buttonUpLeft" v-gamepad:touch="['UP', 'LEFT']"></div>
                         <div class="buttonUp" v-gamepad:touch="'UP'"></div>
+                        <div class="buttonUpRight" v-gamepad:touch="['UP', 'RIGHT']"></div>
                     </div>
                     <div class="r2">
                         <div class="buttonLeft" v-gamepad:touch="'LEFT'"></div>
@@ -30,7 +32,9 @@
                         <div class="buttonRight" v-gamepad:touch="'RIGHT'"></div>
                     </div>
                     <div class="r3">
+                        <div class="buttonDownLeft" v-gamepad:touch="['DOWN', 'LEFT']"></div>
                         <div class="buttonDown" v-gamepad:touch="'DOWN'"></div>
+                        <div class="buttonDownRight" v-gamepad:touch="['DOWN', 'RIGHT']"></div>
                     </div>
                 </div>
             </div>
@@ -228,6 +232,15 @@ onBeforeUnmount(() => {
                     width: 100%;
                     display: flex;
                     justify-content: center;
+                    .buttonUpLeft {
+                        width: 47px;
+                        height: 47px;
+                        border-top: 3px solid black;
+                        border-left: 3px solid black;
+                        border-right: 3px solid black;
+                        background-color: green;
+                        border-radius: 8px;
+                    }
                     .buttonUp {
                         width: 38px;
                         height: 47px;
@@ -235,6 +248,15 @@ onBeforeUnmount(() => {
                         border-left: 3px solid black;
                         border-right: 3px solid black;
                         background-color: #2f88ff;
+                        border-radius: 8px;
+                    }
+                    .buttonUpRight {
+                        width: 47px;
+                        height: 47px;
+                        border-top: 3px solid black;
+                        border-left: 3px solid black;
+                        border-right: 3px solid black;
+                        background-color: green;
                         border-radius: 8px;
                     }
                 }
@@ -273,6 +295,15 @@ onBeforeUnmount(() => {
                     width: 100%;
                     display: flex;
                     justify-content: center;
+                    .buttonDownLeft {
+                        width: 47px;
+                        height: 47px;
+                        border-bottom: 3px solid black;
+                        border-left: 3px solid black;
+                        border-right: 3px solid black;
+                        background-color: green;
+                        border-radius: 8px;
+                    }
                     .buttonDown {
                         width: 38px;
                         height: 47px;
@@ -280,6 +311,15 @@ onBeforeUnmount(() => {
                         border-left: 3px solid black;
                         border-right: 3px solid black;
                         background-color: #2f88ff;
+                        border-radius: 8px;
+                    }
+                    .buttonDownRight {
+                        width: 47px;
+                        height: 47px;
+                        border-bottom: 3px solid black;
+                        border-left: 3px solid black;
+                        border-right: 3px solid black;
+                        background-color: green;
                         border-radius: 8px;
                     }
                 }

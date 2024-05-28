@@ -1,3 +1,3 @@
 export default {
-    serverUrl: 'http://localhost:9999',
+    serverUrl: 'http://81.69.30.66:9999',
 }
